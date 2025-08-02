@@ -6,7 +6,7 @@ This is the **living knowledge base** behind [AgentSee](https://againstdeclivity
 
 What you'll find here:
 - Foundational definitions of agency, coherence, motivation, and internal conflict
-- Experimental frameworks like [SWIFT](./SWIFT-Framework.md), the [Narrative Alignment Model](./Narrative-Alignment-Model.md), and [Positive Interdependence](./Definition-Positive-Interdependence.md)
+- Experimental frameworks like [SWIFT](./Frameworks/SWIFT-Framework.md), the [Narrative Alignment Model](./Frameworks/Narrative-Alignment-Model.md), and [Positive Interdependence](./Frameworks/Definition-Positive-Interdependence.md)
 - Personal essays that show the thinking-in-process
 - Conceptual scaffolding for future cognitive infrastructure tools
 
@@ -19,9 +19,9 @@ AgentSee is building the **Bell Labs for human well-being**—a lab for mental m
 
 ### 🔍 Start Here
 - [AgentSee TLDR](./AgentSeeTLDR.md)
-- [SWIFT Framework](./SWIFT-Framework.md)
-- [Narrative Alignment Model](./Narrative-Alignment-Model.md)
-- [You're Not Lazy, You're Fractured](./You're-Not-Lazy,-You're-Fractured.md)
+- [SWIFT Framework](./Frameworks/SWIFT-Framework.md)
+- [Narrative Alignment Model](./Frameworks/Narrative-Alignment-Model.md)
+- [You're Not Lazy, You're Fractured](./Personal-Writing/You're-Not-Lazy,-You're-Fractured.md)
 
 ---
 
