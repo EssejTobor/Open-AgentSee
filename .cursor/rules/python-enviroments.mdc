@@ -1,0 +1,181 @@
+---
+description: 
+globs: **/*.py,**/pyproject.toml,**/uv.lock,**/requirements.txt,**/.venv/**
+alwaysApply: false
+---
+
+# UV Python Package Management Rules
+
+## Core Principles
+- **ALWAYS use UV for Python package management** - Never use pip directly when UV is available
+- **Choose the right strategy for your workspace type** - Package projects vs documentation/script workspaces have different needs
+- **Maintain lockfile discipline** - Always keep `uv.lock` and `pyproject.toml` in sync when applicable
+- **Environment isolation** - Use UV's built-in virtual environment management
+- **Current Python requirement** - Use Python >=3.13 for latest features and performance
+
+## Workspace Type Detection
+
+### Package Development Projects
+- Has source code in `src/` or package directories
+- Needs to be built and distributed
+- **Use**: `uv add <package>` for dependencies
+
+### Documentation/Script/Notebook Workspaces  
+- No source code to build (documentation, notebooks, scripts only)
+- Just needs dependencies to run tools like Jupyter
+- **Use**: `uv pip install <package>` for dependencies
+- **Skip**: Complex build configuration in `pyproject.toml`
+
+## Command Hierarchy (Contextual)
+
+### Installing Packages
+**For Package Projects:**
+1. `uv add <package>` - **PREFERRED** (permanent, updates pyproject.toml and lockfile)
+2. `uv pip install <package>` - Only for temporary/testing purposes
+
+**For Documentation/Script Workspaces:**
+1. `uv pip install <package>` - **PREFERRED** (avoids build complexity)
+2. Simple `pyproject.toml` with just dependencies listed
+3. Never use `pip install` directly
+
+### Environment Management
+1. `uv venv .venv` - Create virtual environment
+2. `uv sync` - Install exactly what's in uv.lock (PREFERRED for project dependencies)
+3. `uv pip sync` - Alternative sync for pip-style workflows
+4. `uv pip list` - Check installed packages
+5. `uv pip check` - Verify dependency integrity
+
+### Lockfile Management
+1. `uv lock` - Create/refresh uv.lock (PREFERRED for projects)
+2. `uv lock --upgrade` - Upgrade all dependencies within constraints
+3. `uv add --upgrade-package <package>` - Upgrade single dependency
+
+### Package Inspection
+1. `uv pip show <package>` - Show package metadata
+2. `uv pip tree` - Display full dependency tree
+
+## Project Setup Requirements
+
+### New Python Project
+1. **Initialize with UV**: Always start with `uv venv .venv`
+2. **Use pyproject.toml**: Prefer over `requirements.txt`
+3. **Set Python requirement**: Use `requires-python = ">=3.13"` in pyproject.toml
+4. **Shell-specific activation commands**:
+   - Command Prompt: `.venv\Scripts\activate.bat`
+   - PowerShell: `.venv\Scripts\Activate.ps1` 
+   - Git Bash: `source .venv/Scripts/activate`
+   - Unix/Linux/macOS: `source .venv/bin/activate`
+
+### Required Files
+- `pyproject.toml` - Primary dependency declaration
+- `uv.lock` - Locked dependency versions (commit to git)
+- `.venv/` - Virtual environment (add to .gitignore)
+
+## Workflow Patterns
+
+### Daily Development
+1. **Start**: Activate environment (shell-specific command from above)
+2. **Check**: `uv pip list` to verify current packages
+3. **Add deps**: Choose command based on workspace type
+   - Package projects: `uv add <package>`
+   - Documentation/script workspaces: `uv pip install <package>`
+4. **Sync**: `uv sync` for package projects, `uv pip install -r requirements.txt` for simpler setups
+
+### Code Collaboration
+1. **Before commit**: Ensure `uv.lock` is up to date with `uv lock`
+2. **After pull**: Run `uv sync` to sync dependencies
+3. **Always commit**: Both `pyproject.toml` and `uv.lock`
+
+## Error Prevention & Troubleshooting
+
+### Common Build Errors with `uv add`
+**Problem**: "Unable to determine which files to ship" or build failures
+**Solution**: 
+1. Check if this is a package project or documentation workspace
+2. For documentation workspaces: Use `uv pip install` instead
+3. For package projects: Add proper build configuration:
+   ```toml
+   [tool.hatch.build.targets.wheel]
+   packages = ["src/your_package"] # or packages = [] for no packages
+   ```
+
+### Missing Files Errors  
+**Problem**: "README.md does not exist" or similar file errors
+**Solution**: 
+1. Remove file references from pyproject.toml if files don't exist
+2. Or create the missing files
+3. For simple setups, omit `readme = "README.md"` line
+
+### Activation Command Failures
+**Problem**: Activation doesn't work or gives permission errors  
+**Solution**: Use the correct command for your shell:
+- Git Bash: `source .venv/Scripts/activate` 
+- Command Prompt: `.venv\Scripts\activate.bat`
+- PowerShell: `.venv\Scripts\Activate.ps1`
+
+### General Error Prevention
+1. **Never mix pip and UV** in UV-managed projects
+2. **Always commit** `uv.lock` with dependency changes (package projects only)
+3. **Run appropriate sync** after pulling changes 
+4. **Let UV manage** `uv.lock` automatically with `uv lock`
+5. **Check workspace type** before choosing `uv add` vs `uv pip install`
+
+## Important Distinctions
+- **`uv lock`** - Creates/updates `uv.lock` for projects (PREFERRED)
+- **`uv pip compile`** - Creates requirements-style lock files, NOT `uv.lock`
+- **`uv sync`** - Installs from `uv.lock` (PREFERRED for projects)
+- **`uv pip sync`** - Alternative for pip-style workflows
+- **No `uv update`** - Use `uv add --upgrade-package` or `uv lock --upgrade`
+
+## Code Suggestions Priority
+When suggesting Python package management:
+
+### For Package Development Projects:
+1. **First choice**: `uv add <package>` (builds project + dependencies)
+2. **Second choice**: `uv pip install <package>` (dependencies only) 
+3. **Never suggest**: Direct pip commands
+
+### For Documentation/Script/Notebook Workspaces:
+1. **First choice**: `uv pip install <package>` (avoids build issues)
+2. **Alternative**: Simple pyproject.toml with dependencies list
+3. **Never suggest**: `uv add` (causes build failures) or direct pip
+
+## Latest Package Versions (2025)
+When setting up data science environments, use these current versions:
+- **Python**: 3.13.2 (latest stable with performance improvements)
+- **Jupyter**: 1.1.1+ (latest notebook environment)
+- **Pandas**: 2.3.0+ (latest data manipulation)  
+- **NumPy**: 2.3.1+ (latest numerical computing)
+- **Matplotlib**: 3.10.3+ (latest plotting)
+- **Seaborn**: 0.13.2+ (latest statistical visualization)
+
+## Example pyproject.toml Templates
+
+### For Documentation/Notebook Workspaces:
+```toml
+[project]
+name = "workspace-name"
+version = "0.1.0" 
+description = "Description"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "pandas>=2.3.0", 
+    "numpy>=2.3.1",
+    "matplotlib>=3.10.3",
+    "seaborn>=0.13.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = []  # No packages to build
+```
+
+
+
+
+
+
+
+
+
+
