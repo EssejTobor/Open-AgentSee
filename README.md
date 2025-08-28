@@ -6,7 +6,7 @@ This is the **living knowledge base** behind [AgentSee](https://againstdeclivity
 
 What you'll find here:
 - Foundational definitions of agency, coherence, motivation, and internal conflict
-- Experimental frameworks like [SWIFT](./Frameworks/SWIFT-Framework.md), the [Narrative Alignment Model](./Frameworks/Narrative-Alignment-Model.md), and [Positive Interdependence](./Frameworks/Definition-Positive-Interdependence.md)
+- Experimental frameworks like [SWIFT](./Frameworks/SWIFT-Framework.md), the [Narrative Alignment Model](./Frameworks/Narrative Alignment Model.md), and [Positive Interdependence](./infra-And-Primitives/Definition-Positive-Interdependence.md)
 - Personal essays that show the thinking-in-process
 - Conceptual scaffolding for future cognitive infrastructure tools
 

@@ -1,7 +1,7 @@
 ---
-version: 1.0
+version: 1.0.9
 created: 2025-04-13
-modified: 2025-04-13
+modified: 2025-08-28
 type: framework
 category: operational_tool
 importance: supporting
@@ -35,35 +35,35 @@ Most goal frameworks (like SMART goals) assume stable preferences, predictable e
 ### S = Speed (of Learning & Iteration)
 - **Definition**: The velocity at which feedback is gathered and incorporated, prioritizing rapid cycles of action-learning-adjustment over perfect execution.
 - **Operational mechanism**: Creating minimal viable experiments, reducing friction in testing cycles, and minimizing the delay between action and feedback.
-- **Neurobiological basis**: Optimizes dopaminergic learning signals by increasing the frequency of prediction-outcome pairs, strengthening neural pathways through repeated activation and adjustment.
+- **Theoretical neurobiological basis**: Optimizes dopaminergic learning signals by increasing the frequency of prediction-outcome pairs, strengthening neural pathways through repeated activation and adjustment.
 - **Signals of function**: Quick adjustment to new information, comfort with imperfection, continuous movement toward objectives, escalating competence.
 - **Signals of breakdown**: Analysis paralysis, perfectionism blocking progress, excessive planning relative to action, lengthy feedback delay loops.
 
 ### W = Wonder (Intrinsic Curiosity Gradient)
 - **Definition**: Following genuine interest and curiosity as the primary navigation system, leveraging intrinsic motivation rather than external pressure.
 - **Operational mechanism**: Attending to natural cognitive attraction, pursuing questions that genuinely spark interest, and exploring areas of epistemic tension.
-- **Neurobiological basis**: Engages intrinsic reward circuitry associated with information-seeking and novelty, activating opioid and dopaminergic systems that create sustainable motivation patterns.
+- **Theoretical neurobiological basis**: Engages intrinsic reward circuitry associated with information-seeking and novelty, activating opioid and dopaminergic systems that create sustainable motivation patterns.
 - **Signals of function**: Sustained engagement without external rewards, absorption in tasks, natural time expansion during exploration, spontaneous questioning.
 - **Signals of breakdown**: Forced interest, quick disengagement, clock-watching, motivation requiring external reinforcement, mechanical execution.
 
 ### I = Intrinsic Value (Authentic Alignment)
 - **Definition**: Ensuring actions align with genuine personal values and interests rather than externally imposed shoulds or social expectations.
 - **Operational mechanism**: Regular re-evaluation of whether activities resonate with authentic desires, adjusting approaches to enhance intrinsic motivation, and connecting tasks to meaningful personal narratives.
-- **Neurobiological basis**: Creates coherence between the Default Mode Network (self-reference) and task execution networks, reducing cognitive dissonance and minimizing the metabolic cost of self-regulation.
+- **Theoretical neurobiological basis**: Creates coherence between the Default Mode Network (self-reference) and task execution networks, reducing cognitive dissonance and minimizing the metabolic cost of self-regulation.
 - **Signals of function**: Energization from activities, narrative coherence between values and actions, reduced need for willpower, natural prioritization.
 - **Signals of breakdown**: Depletion from supposedly valued activities, internal resistance, value-action gaps, misalignment between stated priorities and attention allocation.
 
 ### F = Factful Flexibility (Adaptive Understanding)
 - **Definition**: Maintaining a commitment to reality-based models while remaining flexible enough to update them based on new evidence.
 - **Operational mechanism**: Active testing of assumptions, explicit tracking of changing perspectives, and continuous refinement of mental models based on empirical feedback.
-- **Neurobiological basis**: Optimizes Bayesian belief-updating processes, balancing prior confidence with new evidence through appropriate precision-weighting of prediction errors.
+- **Theoretical neurobiological basis**: Optimizes Bayesian belief-updating processes, balancing prior confidence with new evidence through appropriate precision-weighting of prediction errors.
 - **Signals of function**: Willingness to be wrong, proportional belief updating, decreased surprise over time, increasingly accurate predictions.
 - **Signals of breakdown**: Confirmation bias, perseverance of disproven beliefs, excessive certainty, reality distortion to preserve existing models.
 
 ### T = Test Rapidly (Experimental Mindset)
 - **Definition**: Approaching actions as experiments designed to generate useful information rather than immediately achieve perfection.
 - **Operational mechanism**: Framing initiatives as hypothesis tests, designing for maximum learning per unit of effort, and systematically extracting insights from both successes and failures.
-- **Neurobiological basis**: Reframes "failure" as valuable prediction error signals, reducing threat responses and enhancing learning through recategorization of outcomes as information rather than judgment.
+- **Theoretical neurobiological basis**: Reframes "failure" as valuable prediction error signals, reducing threat responses and enhancing learning through recategorization of outcomes as information rather than judgment.
 - **Signals of function**: Decreased failure aversion, explicit hypothesis formation, information-focused outcome evaluation, consistent experimentation.
 - **Signals of breakdown**: Excessive caution, binary success/failure framing, avoidance of uncertain domains, reluctance to expose ideas to reality testing.
 
